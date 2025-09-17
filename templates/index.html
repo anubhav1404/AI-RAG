@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>K8s Inspector</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>K8s Inspector</h1>
+
+    <div class="controls">
+      <label>Namespace:
+        <input id="namespace" value="default" />
+      </label>
+      <button id="btn-pods">List Pods</button>
+      <button id="btn-svcs">List Services</button>
+      <button id="btn-deps">List Deployments</button>
+    </div>
+
+    <div class="output" id="output"></div>
+
+    <hr/>
+
+    <div class="nlq">
+      <h2>Ask (natural language)</h2>
+      <textarea id="nlq-question" placeholder="e.g. How many pods are CrashLoopBackOff?"></textarea><br/>
+      <button id="btn-ask">Ask</button>
+      <div id="llm-answer" class="output"></div>
+    </div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
+
