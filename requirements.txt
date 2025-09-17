@@ -4,6 +4,5 @@ kubernetes
 requests
 langchain      # you might have a specific langchain version
 boto3
-# If you use a Bedrock-specific LangChain integration, add it (e.g. langchain_aws) 
-# but boto3 + HTTP wrapper is okay too.
-
+langgraph
+langchain_core
