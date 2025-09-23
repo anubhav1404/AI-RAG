@@ -6,28 +6,30 @@
   <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>K8s Inspector</h1>
-
-    <div class="controls">
-      <label>Namespace:
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>K8s Inspector</h2>
+      <label>
+        Namespace:
         <input id="namespace" value="default" />
       </label>
-      <button id="btn-pods">List Pods</button>
-      <button id="btn-svcs">List Services</button>
-      <button id="btn-deps">List Deployments</button>
-    </div>
+      <nav>
+        <button data-action="pods">Pods</button>
+        <button data-action="services">Services</button>
+        <button data-action="deployments">Deployments</button>
+      </nav>
+    </aside>
 
-    <div class="output" id="output"></div>
-
-    <hr/>
-
-    <div class="nlq">
-      <h2>Ask (natural language)</h2>
-      <textarea id="nlq-question" placeholder="e.g. How many pods are CrashLoopBackOff?"></textarea><br/>
-      <button id="btn-ask">Ask</button>
-      <div id="llm-answer" class="output"></div>
-    </div>
+    <!-- Main -->
+    <main class="main">
+      <section class="nlq">
+        <h3>Ask a Question</h3>
+        <textarea id="nlq-question" placeholder="e.g. How many pods are running in kube-system?"></textarea>
+        <button id="btn-ask">Ask</button>
+        <div id="llm-answer" class="card answer"></div>
+      </section>
+    </main>
   </div>
 
   <script src="/static/js/app.js"></script>
